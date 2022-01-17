@@ -13,7 +13,9 @@ export default {
     }
 
     messageBus.subscribe("/redirect_to_wizard", function (wizardId) {
-      const wizardUrl = window.location.origin + "/w/" + wizardId;
+      url = window.location.href;
+      split_url = url.split('/admin');
+      const wizardUrl = split_url[0] + "/w/" + wizardId;
       window.location.href = wizardUrl;
     });
 
